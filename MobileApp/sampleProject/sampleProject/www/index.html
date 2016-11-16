@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!--
+        Customize the content security policy in the meta tag below as needed. Add 'unsafe-inline' to default-src to enable inline JavaScript.
+        For details, see http://go.microsoft.com/fwlink/?LinkID=617521
+    -->
+    <!--<meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">-->
+
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link href="css/jquery.mobile-1.4.5.css" rel="stylesheet" />
+    <title>sampleProject</title>
+    <link href="css/jquery.mobile-1.4.5.css" rel="stylesheet" />
+    <script src="scripts/raphael-min.js"></script>
+    <script src="scripts/jquery-2.2.3.min.js"></script>
+    <script src="scripts/morris-0.4.1.min.js"></script>
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>-->
+    <script src="scripts/jquery.mobile-1.4.5.js"></script>
+    <script type="text/javascript" src="scripts/index.js"></script>
+    <script type="text/javascript" src="scripts/home.js"></script>
+    <script type="text/javascript" src="scripts/camera.js"></script>
+    <script type="text/javascript" src="scripts/Listemp.js"></script>
+    <script type="text/javascript" src="scripts/addEmp.js"></script>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script>
+        document.addEventListener("deviceready", onDeviceReady, false);
+        function onDeviceReady() {
+            console.log("Device is ready");
+        }
+    </script>
+</head>
+<body>
+    <div data-role="page" id="fistpage">
+        <div data-role="panel" id="mypanel" data-display="push">
+            <!-- panel content goes here -->
+            <ul data-role="listview">
+                <li data-icon="false"><a href="#fistpage">page 1</a></li>
+                <li data-icon="false"><a href="#secondpage">page 2</a></li>
+                <li data-icon="false"><a href="#login">Login page</a></li>
+                <li data-icon="false"><a href="#" id="sharebtn">Share</a></li>
+                <li data-icon="false"><a href="#camera">Camera</a></li>
+                <li data-icon="false"><a href="#listEmp">List of employee</a></li>
+                <li data-icon="false"><a href="#graph">Graph</a></li>
+            </ul>
+        </div>
+        <div data-role="header">
+            <a href="#mypanel" class="ui-btn ui-btn-inline ui-icon-bars ui-btn-icon-right">menu</a>
+            <a href="#" class="ui-btn ui-btn-right ui-btn-inline ui-icon-forbidden ui-btn-icon-right">Logout</a>
+            <h2>Page title</h2>
+        </div>
+        <div role="main" class="ui-content">
+            <h3 class="ui-bar ui-bar-a">Heading</h3>
+            <div class="ui-body ui-body-a">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse accumsan blandit fermentum. Pellentesque cursus mauris purus, auctor commodo mi ullamcorper nec. Donec semper mattis eros, nec condimentum ante sollicitudin quis. Etiam orci sem, porttitor ut tellus nec, blandit posuere urna. Proin a arcu non lacus pretium faucibus. Aliquam sed est porttitor, ullamcorper urna nec, vehicula lorem. Cras porttitor est lorem, non venenatis diam convallis congue.</p>
+            </div>
+            <a href="#secondpage" data-ajax="false" data-transition="turn" class="ui-btn ui-corner-all">Move to second page</a>
+            <a href="#myPopup" data-rel="popup" class="ui-btn ui-btn-inline ui-corner-all">Show Popup</a>
+
+            <div data-role="popup" id="myPopup">
+                <p>This is a simple popup.</p>
+            </div>
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <h2>
+                &copy; Mehta group
+            </h2>
+        </div>
+    </div>
+    <div data-role="page" id="secondpage">
+        <div data-role="header">
+            <h2>Page title</h2>
+        </div>
+        <div role="main" class="ui-content">
+            <a href="#fistpage" class="ui-btn ui-corner-all" data-transition="slide">Move to first page</a>
+        </div>
+        <div data-role="footer"></div>
+    </div>
+    <div data-role="page" id="login">
+        <div data-role="header">
+            <h2>Login</h2>
+        </div>
+        <div role="main" class="ui-content">
+            <label for="username">Username:</label>
+            <input type="text" id="username" placeholder="Enter your Username" />
+            <h4 id="secondtimePageUsername"></h4>
+            <label for="password">Password:</label>
+            <input type="password" id="password" placeholder="Enter your Password" />
+            <button class="ui-btn ui-corner-all ui-btn-b" id="loginbtn">Login</button>
+            <h2 id="welcomemsg" class="msg">Welcome to Mehta group</h2>
+            <h2 class="msg">Have a good Day</h2>
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <h2>
+                &copy; Mehta group
+            </h2>
+        </div>
+    </div>
+    <div data-role="page" id="home">
+        <div data-role="header">
+            <h2>Home</h2>
+            <button class="ui-btn ui-btn-right ui-btn-icon-left ui-icon-power" id="logoutbtn">Logout</button>
+        </div>
+        <div role="main" class="ui-content">
+            <h2>Welcome to HomePage</h2>
+        </div>
+    </div>
+    <div data-role="page" id="camera">
+        <button id="cameraCapture">Click here to take photo</button>
+        <img src="" id="photo" style="width:100%;height:auto" />
+    </div>
+    <div data-role="page" id="listEmp">
+        <div data-role="header">
+            <h2>List of Employee</h2>
+            <a href="#addEmp" class="ui-btn ui-icon-plus ui-btn-right">Add</a>
+        </div>
+        <div role="main" class="ui-content">
+            <ul data-role="listview" id="empListView"></ul>
+        </div>
+    </div>
+    <div data-role="page" id="addEmp">
+        <div data-role="header">
+            <h2>List of Employee</h2>
+        </div>
+        <div role="main" class="ui-content">
+            <input type="text" id="fname" placeholder="First name" />
+            <input type="text" id="lanme" placeholder="Last name" />
+            <input type="text" id="designation" placeholder="Designation" />
+            <input type="text" id="latlong" placeholder="Latlong" />
+            <input type="file" id="empPassword" placeholder="Password" />
+            <button id="saveEmployee">Save</button>
+        </div>
+    </div>
+    <div data-role="page" id="graph">
+        <div role="main" class="ui-content">
+            <div data-role="none" id="line-example"></div>
+        </div>
+    </div>
+</body>
+</html>
