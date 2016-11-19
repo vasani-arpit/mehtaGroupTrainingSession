@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!--
+        Customize the content security policy in the meta tag below as needed. Add 'unsafe-inline' to default-src to enable inline JavaScript.
+        For details, see http://go.microsoft.com/fwlink/?LinkID=617521
+    -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.min.css">
+    <title>training2</title>
+    <!--jQuery-->
+    <script type="text/javascript" src="scripts/jquery-2.2.3.min.js"></script>
+    <script type="text/javascript" src="scripts/jquery.mobile-1.4.5.min.js"></script>
+    <script type="text/javascript" src="scripts/index.js"></script>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script>
+        alert("sdsdgsfg");
+    </script>
+</head>
+<body>
+    <div data-role="page" id="firstPage">
+        <div data-role="panel" id="mypanel" data-display="overlay">
+            <!-- panel content goes here -->
+            <ul data-role="listview">
+                <li data-icon="false"><a href="#firstPage">First Page</a></li>
+                <li data-icon="false"><a href="#secondPage">Second Page</a></li>
+                <li data-icon="false"><a href="#login">Login</a></li>
+                <li data-icon="false"><a href="#empList">Employee List</a></li>
+                <li data-icon="false"><a href="#">Ferrari</a></li>
+            </ul>
+        </div><!-- /panel -->
+        <div data-role="header">
+            <a href="#mypanel" class="ui-btn ui-icon-bars ui-btn-icon-left ui-corner-all">Menu</a>
+            <h2>Training App</h2>
+        </div>
+        <div role="main" class="ui-content">
+            <h3 class="ui-bar ui-bar-a ui-corner-all">This is fist page</h3>
+            <div class="ui-body ui-body-a ui-corner-all">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse accumsan blandit fermentum. Pellentesque cursus mauris purus, auctor commodo mi ullamcorper nec. Donec semper mattis eros, nec condimentum ante sollicitudin quis. Etiam orci sem, porttitor ut tellus nec, blandit posuere urna. Proin a arcu non lacus pretium faucibus. Aliquam sed est porttitor, ullamcorper urna nec, vehicula lorem. Cras porttitor est lorem, non venenatis diam convallis congue.</p>
+            </div>
+            <a href="#secondPage" class="ui-btn ui-corner-all ui-btn-inline ui-shadow mehtabtn" data-transition="flip">Goto second page</a>
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <h3>&copy; Mehta Group</h3>
+        </div>
+    </div>
+    <div data-role="page" id="secondPage">
+        <div data-role="header">
+            <h2>Training App</h2>
+        </div>
+        <div role="main" class="ui-content">
+            <h3 class="ui-bar ui-bar-a ui-corner-all">This is Second page</h3>
+            <a href="#firstPage" class="ui-btn">Goto first page</a>
+
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <h3>&copy; Mehta Group</h3>
+        </div>
+    </div>
+    <div data-role="page" id="login">
+        <div data-role="header">
+            <h2>Training App</h2>
+        </div>
+        <div role="main" class="ui-content">
+            <input type="text" placeholder="Username" id="username" />
+            <input type="password" placeholder="Password" id="password" />
+            <button class="ui-btn ui-btn-inline ui-corner-all" id="loginbtn">Login</button>
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <h3>&copy; Mehta Group</h3>
+        </div>
+    </div>
+    <div data-role="page" id="welcome">
+        <div data-role="header">
+            <h2>Training App</h2>
+        </div>
+        <div role="main" class="ui-content">
+            <h1>Welcome to Mehta Group.</h1>
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <h3>&copy; Mehta Group</h3>
+        </div>
+    </div>
+    <div data-role="page" id="empList">
+        <div data-role="header">
+            <a href="#addEmployee" class="ui-btn ui-icon-plus ui-btn-icon-notext ui-btn-right ui-corner-all">No text</a>
+            <h2>Employee List</h2>
+            
+
+        </div>
+        <div role="main" class="ui-content">
+            <ul data-role="listview" id="empListview"></ul>
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <h3>&copy; Mehta Group</h3>
+        </div>
+    </div>
+    <div data-role="page" id="addEmployee">
+        <div data-role="header">
+            <h2>Add Employee</h2>
+        </div>
+        <div role="main" class="ui-content">
+            <input type="text" id="fname" placeholder="First name" />
+            <input type="text" id="lname" placeholder="Last name" />
+            <input type="text" id="designation" placeholder="Designation" />
+            <input type="text" id="location" placeholder="Location" disabled />
+            <input type="password" id="txtpassword" placeholder="Password" />
+            <img src="" id="empImage"/>
+            <button id="captureImage">Capture Image</button>
+            <button id="addEmpbtn">Add Employee</button>
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <h3>&copy; Mehta Group</h3>
+        </div>
+    </div>
+</body>
+</html>
