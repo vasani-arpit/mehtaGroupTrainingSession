@@ -38,7 +38,7 @@ namespace MehtaGroupMvc.Models
             return ds;
         }
 
-        public int AddEmployee(string empFirstName, string empLastName, string empDesignation, string empLatLong, string empPassword)
+        public int AddEmployee(string empFirstName, string empLastName, string empDesignation, string empLatLong, string empPassword, string empImage)
         {
             int result = 0;
             try
@@ -52,6 +52,7 @@ namespace MehtaGroupMvc.Models
                     new SqlParameter("@EmpDesignation", empDesignation),
                     new SqlParameter("@LatLong", empLatLong),
                     new SqlParameter("@Password", empPassword),
+                    new SqlParameter("@EmpImage", empImage),
                     IsSave);
 
                 result = Convert.ToInt32(IsSave.Value);
@@ -63,7 +64,7 @@ namespace MehtaGroupMvc.Models
             return result;
         }
 
-        public int UpdateEmployee(string empFirstName, string empLastName, string empDesignation, string empLatLong, string empPassword, int empID)
+        public int UpdateEmployee(string empFirstName, string empLastName, string empDesignation, string empLatLong, string empPassword, string empImage, int empID)
         {
             int result = 0;
             try
@@ -78,6 +79,7 @@ namespace MehtaGroupMvc.Models
                     new SqlParameter("@EmpDesignation", empDesignation),
                     new SqlParameter("@LatLong", empLatLong),
                     new SqlParameter("@Password", empPassword),
+                    new SqlParameter("@EmpImage", empImage),
                     IsSave);
 
                 result = Convert.ToInt32(IsSave.Value);

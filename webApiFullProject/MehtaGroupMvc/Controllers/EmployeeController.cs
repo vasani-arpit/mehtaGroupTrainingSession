@@ -67,7 +67,8 @@ namespace MehtaGroupMvc.Controllers
                 string empDesignation = frm.Get("empDesignation");
                 string empLatLong = frm.Get("empLatLong");
                 string empPassword = frm.Get("empPassword");
-                int result = objEmp.AddEmployee(empFirstName, empLastName, empDesignation, empLatLong, empPassword);
+                string empImage = frm.Get("empImage");
+                int result = objEmp.AddEmployee(empFirstName, empLastName, empDesignation, empLatLong, empPassword, empImage);
                 response = this.Request.CreateResponse(HttpStatusCode.OK, new { IsSaved = Convert.ToString(result) });
             }
             catch (Exception e)
@@ -89,7 +90,8 @@ namespace MehtaGroupMvc.Controllers
                 string empDesignation = frm.Get("empDesignation");
                 string empLatLong = frm.Get("empLatLong");
                 string empPassword = frm.Get("empPassword");
-                int result = objEmp.UpdateEmployee(empFirstName, empLastName, empDesignation, empLatLong, empPassword, empID);
+                string empImage = frm.Get("empImage");
+                int result = objEmp.UpdateEmployee(empFirstName, empLastName, empDesignation, empLatLong, empPassword, empImage, empID);
                 response = this.Request.CreateResponse(HttpStatusCode.OK, new { IsSaved = Convert.ToString(result) });
             }
             catch (Exception e)
